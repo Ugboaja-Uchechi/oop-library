@@ -28,7 +28,7 @@ Linter(s) such as:
 
 >Open this project in a code editor if you don't have one, I recommend installing Visual Studio code or any of your choice
 
-> In Visual Studio code install code runner to see the output of your code and to make sure it's running properly
+> In Visual Studio code install code runner
 
 >After installing code runner click "ctrl+alt+n" to see the output of your code and to make sure it's running properly
 
