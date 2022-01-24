@@ -30,6 +30,8 @@ Linter(s) such as:
 
 > In Visual Studio code install code runner to see the output of your code and to make sure it's running properly
 
+>After installing code runner click "ctrl+alt+n" to see the output of your code and to make sure it's running properly
+
 ## Author
 
 👤 **Author**
