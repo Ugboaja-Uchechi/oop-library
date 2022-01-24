@@ -16,6 +16,20 @@ Linter(s) such as:
 
 - Rubocop
 
+## Getting Started
+
+> In your terminal cd to the folder you want this project to be in
+
+> Still in your terminal git clone https://github.com/Ugboaja-Uchechi/oop-library.git
+
+> In your terminal cd to the cloned repository
+
+> If you don't have Ruby installed, download Ruby. If you do skip this step
+
+>Open this project in a code editor if you don't have one, I recommend installing Visual Studio code or any of your choice
+
+> In Visual Studio code install code runner to see the output of your code and to make sure it's running properly
+
 ## Author
 
 👤 **Author**
