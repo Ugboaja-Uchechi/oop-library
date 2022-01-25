@@ -8,7 +8,7 @@ class Person
     @id = Random.rand(1..10)
     @name = name
     @age = age
-    @Corrector = corrector.new
+    @corrector = Corrector.new
     @parent_permission = parent_permission
   end
 
