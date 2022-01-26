@@ -34,7 +34,7 @@ Linter(s) such as:
 
 ## Author
 
-👤 **Ugoaja Uchechi**
+👤 **Ugboaja Uchechi**
 
 - [Github](https://github.com/Ugboaja-Uchechi)
 
