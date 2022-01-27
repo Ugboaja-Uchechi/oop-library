@@ -134,3 +134,43 @@ class Ui
     end
   end
 end
+
+class ListOfOptions
+  def self.options_page
+    puts 'Please choose an option by entering a number:'
+    option1 = '1 - List all books'
+    option2 = '2 - List all people'
+    option3 = '3 - Create a person'
+    option4 = '4 - Create a book'
+    option5 = '5 - Create a rental'
+    option6 = '6 - List all rentals for a given person id'
+    option7 = '7 - Exit'
+    questions_arr = [option1, option2, option3, option4, option5, option6, option7]
+    questions_arr.each do |question|
+      puts question
+    end
+    Integer(gets.chomp)
+  end
+
+  option = Options.new
+
+  loop do
+    case options_page
+    when 1
+      option.book_list
+    when 2
+      option.people_list
+    when 3
+      option.create_person
+    when 4
+      option.create_book
+    when 5
+      option.create_rental
+    when 6
+      option.rental_list
+    when 7
+      puts 'Goodbye!'
+      exit
+    end
+  end
+end
