@@ -101,7 +101,7 @@ class Ui
     book_number = Integer(gets.chomp)
     book_selected = @books[book_number - 1][:object]
 
-    puts 'Select a person from the following list by number'
+    puts 'Select a person from the following list by number (not by id)'
 
     @people.each_with_index do |person, index|
       puts "#{index + 1} - #{person[:output]}"
@@ -128,8 +128,8 @@ class Ui
     @rentals.each do |rental|
       if rental.person.id == person_id
         puts "Date: #{rental.date}, Book: #{rental.book.title} by #{rental.book.author}"
-      else
-        puts 'No rentals found!'
+      # else
+      #   puts 'No rentals found!'
       end
     end
   end
