@@ -36,9 +36,9 @@ class Ui
       student = Student.new(age, name, parent_permission: users_parent_permission)
 
       @people.push({
-        output: "[Student] Name: #{student.name}, ID: #{student.id}, Age: #{student.age}",
-        object: student
-      })
+                     output: "[Student] Name: #{student.name}, ID: #{student.id}, Age: #{student.age}",
+                     object: student
+                   })
       puts 'Student created Successfully !'
 
     when 2
@@ -54,9 +54,9 @@ class Ui
       teacher = Teacher.new(age, name, specialization)
 
       @people.push({
-        output: "[Teacher] Name: #{teacher.name}, ID: #{teacher.id}, Age: #{teacher.age}",
-        object: teacher
-      })
+                     output: "[Teacher] Name: #{teacher.name}, ID: #{teacher.id}, Age: #{teacher.age}",
+                     object: teacher
+                   })
       puts 'Teacher created Successfully !'
     else
       puts 'Wrong option'
@@ -73,21 +73,21 @@ class Ui
     book = Book.new(book_title, book_author)
 
     @books.push({
-      output: "[Book] Title: #{book.title}, Author: #{book.author}",
-      object: book
-    })
+                  output: "[Book] Title: #{book.title}, Author: #{book.author}",
+                  object: book
+                })
     puts 'Book created successfully'
   end
 
   def list_books
     @books.each do |book|
-      puts book [:output]
+      puts book[:output]
     end
   end
 
   def list_people
     @people.each do |person|
-      puts person [:output]
+      puts person[:output]
     end
   end
 
