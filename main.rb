@@ -8,6 +8,7 @@ class Ui
   def initialize
     @books = []
     @people = []
+    @rental = []
   end
 
   def person
@@ -75,6 +76,7 @@ class Ui
       output: "[Book] Title: #{book.title}, Author: #{book.author}",
       object: book
     })
+    puts 'Book created successfully'
   end
 
   def list_books
@@ -87,5 +89,32 @@ class Ui
     @people.push do |person|
       puts person [:output]
     end
+  end
+
+  def create_rentals
+    puts 'Select a book from the following list by number you want to rent'
+
+    @books.each_with_index do |book, index|
+      puts "#{index + 1} - #{book[:output]}"
+    end
+
+    book_number = Integer(gets.chomp)
+    book_selected = @books[book_number - 1][:object]
+
+    puts 'Select a person from the following list by number'
+
+    @people.each_with_index do |person, index|
+      puts "#{index + 1} - #{person[:output]}"
+    end
+
+    person_number = Integer(gets.chomp)
+    person_selected = @people[person_number - 1][:object]
+
+    print 'Date: '
+    rental_date = Integer(gets.chomp)
+
+    @rental.push(Rental.new(rental_date, book_selected, person_selected))
+
+    puts 'Rental successfully created !'
   end
 end
