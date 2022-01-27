@@ -8,7 +8,7 @@ class Ui
   def initialize
     @books = []
     @people = []
-    @rental = []
+    @rentals = []
   end
 
   def person
@@ -113,8 +113,24 @@ class Ui
     print 'Date: '
     rental_date = Integer(gets.chomp)
 
-    @rental.push(Rental.new(rental_date, book_selected, person_selected))
+    @rentals.push(Rental.new(rental_date, book_selected, person_selected))
 
     puts 'Rental successfully created !'
+  end
+
+  def rentals_list
+    print 'Id of person: '
+
+    person_id = Integer(gets.chomp)
+
+    puts 'rentals: '
+
+    @rentals.each do |rental|
+      if rental.person.id == person_id
+        puts "Date: #{rental.date}, Book: #{rental.book.title} by #{rental.book.author}"
+      else
+        puts 'No rentals found!'
+      end
+    end
   end
 end
