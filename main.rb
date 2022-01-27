@@ -4,7 +4,7 @@ require './teacher'
 require './book'
 require './rental'
 
-class Options
+class Ui
   def initialize
     @books = []
     @people = []
@@ -18,10 +18,10 @@ class Options
     case option
     when 1
       print 'Age: '
-      users_age = Integer(gets.chomp)
+      age = Integer(gets.chomp)
 
       print 'Name: '
-      users_name = gets.chomp
+      name = gets.chomp
 
       print 'Has parent(s) permission? [Y/N]: '
       users_parent_permission = gets.chomp
@@ -33,7 +33,7 @@ class Options
       when 'n'
         users_parent_permission = false
       end
-      student = Student.new(users_age, users_name, parent_permission: users_parent_permission)
+      student = Student.new(age, name, parent_permission: users_parent_permission)
 
       @people.push({
         output: "[Student] Name: #{student.name}, ID: #{student.id}, Age: #{student.age}",
@@ -43,15 +43,15 @@ class Options
 
     when 2
       print 'Age: '
-      users_age = Integer(gets.chomp)
+      age = Integer(gets.chomp)
 
       print 'Name: '
-      users_name = gets.chomp
+      name = gets.chomp
 
       print 'Specialization: '
-      users_specialization = gets.chomp
+      specialization = gets.chomp
 
-      teacher = Teacher.new(users_age, users_name, users_specialization)
+      teacher = Teacher.new(age, name, specialization)
 
       @people.push({
         output: "[Teacher] Name: #{teacher.name}, ID: #{teacher.id}, Age: #{teacher.age}",
@@ -152,22 +152,22 @@ class ListOfOptions
     Integer(gets.chomp)
   end
 
-  option = Options.new
+  ui = Ui.new
 
   loop do
     case page_for_options
     when 1
-      option.list_books
+      ui.list_books
     when 2
-      option.list_people
+      ui.list_people
     when 3
-      option.person
+      ui.person
     when 4
-      option.create_book
+      ui.create_book
     when 5
-      option.create_rentals
+      ui.create_rentals
     when 6
-      option.rentals_list
+      ui.rentals_list
     when 7
       puts 'Goodbye!'
       exit
@@ -176,7 +176,7 @@ class ListOfOptions
 end
 
 def main
-  showOptions
+  showUi
 end
 
 main
