@@ -4,7 +4,7 @@ require './teacher'
 require './book'
 require './rental'
 
-class Ui
+class Options
   def initialize
     @books = []
     @people = []
@@ -80,13 +80,13 @@ class Ui
   end
 
   def list_books
-    @books.push do |book|
+    @books.each do |book|
       puts book [:output]
     end
   end
 
   def list_people
-    @people.push do |person|
+    @people.each do |person|
       puts person [:output]
     end
   end
@@ -111,7 +111,7 @@ class Ui
     person_selected = @people[person_number - 1][:object]
 
     print 'Date: '
-    rental_date = Integer(gets.chomp)
+    rental_date = gets.chomp
 
     @rentals.push(Rental.new(rental_date, book_selected, person_selected))
 
@@ -136,7 +136,7 @@ class Ui
 end
 
 class ListOfOptions
-  def self.options_page
+  def self.page_for_options
     puts 'Please choose an option by entering a number:'
     option1 = '1 - List all books'
     option2 = '2 - List all people'
@@ -155,22 +155,28 @@ class ListOfOptions
   option = Options.new
 
   loop do
-    case options_page
+    case page_for_options
     when 1
-      option.book_list
+      option.list_books
     when 2
-      option.people_list
+      option.list_people
     when 3
-      option.create_person
+      option.person
     when 4
       option.create_book
     when 5
-      option.create_rental
+      option.create_rentals
     when 6
-      option.rental_list
+      option.rentals_list
     when 7
       puts 'Goodbye!'
       exit
     end
   end
 end
+
+def main
+  showOptions
+end
+
+main
