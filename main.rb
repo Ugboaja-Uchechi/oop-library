@@ -126,11 +126,9 @@ class Ui
     puts 'rentals: '
 
     @rentals.each do |rental|
-      if rental.person.id == person_id
-        puts "Date: #{rental.date}, Book: #{rental.book.title} by #{rental.book.author}"
-      # else
-      #   puts 'No rentals found!'
-      end
+      next unless rental.person.id == person_id
+
+      puts "Date: #{rental.date}, Book: #{rental.book.title} by #{rental.book.author}"
     end
   end
 end
